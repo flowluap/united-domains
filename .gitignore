@@ -1,5 +1,6 @@
 src/.env
 src/cache/
+src/.DS_Store
 src/__pycache__
 src/flow/__pycache__
 src/flow/api/__pycache__
