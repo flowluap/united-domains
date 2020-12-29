@@ -34,7 +34,7 @@ def cR(s, url, debug):
         os.mkdir(cacheFolder)
 
 
-def cRPost(s, url, data, cache=True):
+def cRPost(s, url, data, debug, cache=True):
 
     clean_url = re.sub('[^A-Za-z0-9]+', '', url+str(data))
     if os.path.exists(cacheFolder):
@@ -54,6 +54,6 @@ def cRPost(s, url, data, cache=True):
                 res = s.post(url, data)
                 fopen.write(res.text)
                 if debug: print("[+] Opening file from cache: "+url)
-                return res 
+                return res
     else:
         os.mkdir(cacheFolder)
