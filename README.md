@@ -43,6 +43,10 @@ python3 main.py
 
 - [ ] validate Records
 - [ ] translate minimal record entry to ud-record
-- [ ] create a rest API
+- [ ] create a rest API 
+  - key | permission | ratelimit - Management
 - [ ] create a Docker capable Micro-service-wrapper for fast deployment
+- [ ] CLI
 - [ ] create DNS profiles
+- [ ] check if DNS change is available 
+- [ ] buy/list domains and prices
