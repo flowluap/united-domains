@@ -10,11 +10,6 @@
 - List Records
 - Edit Records (Not fully working yet)
 
-- LogIn with and without 2FA
-- List Domains
-- List SubDomains
-- List Records
-- Edit Records (Not fully working yet)
 
 # Install
 
