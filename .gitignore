@@ -6,3 +6,11 @@ src/flow/__pycache__
 src/flow/api/__pycache__
 src/flow/util/__pycache__
 src/flow/api/session.cookie
+
+venv/
+
+# IntelliJ IDE project files
+.idea/
+*.iws
+*.iml
+*.ipr
