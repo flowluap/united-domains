@@ -9,10 +9,12 @@ load_dotenv(dotenv_path="../../.env")
 
 print(os.getenv("EMAIL"))
 
+SESSION_FILE = os.getcwd() + "/session.cookie"
+
+
 class Session:
     def __init__(self, base, debug):
         self.debug = debug
-        self.sessionFile = "/home/stevee/px/united-domains/src/flow/api/session.cookie"
         self.maxSessionTimeSeconds = 30 * 60
         self.base = base
         self.loadSession()
@@ -22,18 +24,18 @@ class Session:
         return True if "Kunden-Nr:" in str(res.content) else False
 
     def saveSession(self):
-        with open(self.sessionFile, "wb") as f:
+        with open(SESSION_FILE, "wb") as f:
             pickle.dump(self.s, f)
             if self.debug: print("[+] Saved session") 
 
 
     def loadSession(self):
         self.s = reqSession() 
-        if os.path.exists(self.sessionFile):
-            time = datetime.datetime.fromtimestamp(os.path.getmtime(self.sessionFile))
+        if os.path.exists(SESSION_FILE):
+            time = datetime.datetime.fromtimestamp(os.path.getmtime(SESSION_FILE))
             if (datetime.datetime.now() - time).seconds < self.maxSessionTimeSeconds:
                 if self.debug: print("[+] Session found, that is not too old") 
-                with open(self.sessionFile, "rb") as f:
+                with open(SESSION_FILE, "rb") as f:
                     if self.debug: print("[+] Session loaded") 
                     self.s = pickle.load(f)
 
