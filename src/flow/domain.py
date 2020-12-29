@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-from flow.util.recordValidator import validateRecord
+from util.recordValidator import validateRecord
 import re
 import math
 
